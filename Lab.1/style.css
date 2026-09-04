@@ -1,0 +1,21 @@
+body {
+	display: grid;
+	min-height: 100vh;
+	margin: 0;
+	place-items: center;
+	font-family: Arial, sans-serif;
+}
+
+button {
+	padding: 12px 24px;
+	border: 0;
+	border-radius: 6px;
+	background: #e7eb14c9;
+	color: rgb(7, 6, 6);
+	cursor: pointer;
+	font-size: 16px;
+}
+
+button:hover {
+	background: #bfc933;
+}
