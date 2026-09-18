@@ -2,11 +2,8 @@
 <html lang="ro">
 <head>
   <meta charset="UTF-8">
-  <title>Recapitulare HTML - Moldova, Norvegia, Suedia</title>
+  <title>Recapitulare HTML</title>
   <style>
-    * {
-      box-sizing: border-box;
-    }
 
     body {
       font-family: Arial, Helvetica, sans-serif;
@@ -17,24 +14,29 @@
     }
 
     header {
-      background: #1f3b57;
-      color: #fff;
-      padding: 25px 20px;
-      text-align: center;
+      color: #000;
+      text-align: start;
     }
 
-    header h1 {
-      margin: 0 0 5px 0;
+    h1 {
+      margin: 0;
+      font-size: 28px;
+      padding: 12px;
     }
 
     nav {
-      background: #29527a;
-      padding: 12px;
-      text-align: center;
+      padding: 18px;
+      text-align: start;
+    }
+
+    .link {
+      display: flex;
+      justify-content: end;
+      align-items: end;
     }
 
     nav a {
-      color: #fff;
+      color: #000;
       text-decoration: none;
       margin: 0 18px;
       font-weight: bold;
@@ -43,7 +45,7 @@
     }
 
     nav a:hover {
-      background: #3d6d9c;
+      text-decoration: underline;
     }
 
     main {
@@ -54,17 +56,12 @@
 
     section {
       background: #fff;
-      border: 1px solid #d7dde3;
       border-radius: 8px;
       padding: 20px 25px;
       margin-bottom: 30px;
-      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
     }
 
     section h2 {
-      margin-top: 0;
-      color: #1f3b57;
-      border-bottom: 2px solid #e0e6ec;
       padding-bottom: 8px;
     }
 
@@ -81,7 +78,6 @@
     .steag-cadru {
       display: inline-block;
       border: 2px solid #33383d;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
       margin: 15px 0;
       line-height: 0;
     }
@@ -100,19 +96,12 @@
       font-size: 26px;
     }
 
-    .link-extern {
-      display: inline-block;
-      margin-top: 8px;
-      color: #1a5fb4;
-    }
-
     .inapoi-sus {
       display: inline-block;
       margin-top: 18px;
       font-size: 14px;
       color: #29527a;
       text-decoration: none;
-      border-top: 1px solid #e0e6ec;
       padding-top: 10px;
       width: 100%;
     }
@@ -121,26 +110,9 @@
       text-decoration: underline;
     }
 
-    #tabel-comparativ table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-
-    #tabel-comparativ th,
-    #tabel-comparativ td {
-      border: 1px solid #d7dde3;
-      padding: 8px 10px;
-      text-align: left;
-    }
-
-    #tabel-comparativ th {
-      background: #1f3b57;
-      color: #fff;
-    }
-
     footer {
-      background: #1f3b57;
-      color: #cdd7e0;
+      background: #949494;
+      color: #fff;
       text-align: center;
       padding: 15px;
       font-size: 14px;
@@ -160,25 +132,25 @@
 <body id="top">
 
   <header>
-    <h1>Recapitulare HTML</h1>
-    <p>Republica Moldova, Norvegia și Suedia</p>
-  </header>
-
   <nav>
+    <h1>Țări</h1>
+    <div class="link">
     <a href="#moldova">Republica Moldova</a>
     <a href="#norvegia">Norvegia</a>
     <a href="#suedia">Suedia</a>
+    </div>
   </nav>
+  </header>
 
   <main>
 
     <section id="moldova">
       <article>
-        <h2>Partea 1 – Republica Moldova</h2>
+        <h2>Republica Moldova</h2>
 
         <img
           class="imagine-tara"
-          src="https://commons.wikimedia.org/wiki/Special:FilePath/Manastirea%20de%20pe%20stinca%20Orheiul%20Vechi.jpg?width=500"
+          src="https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Moldova_Competitiveness_Project%2C_USAID_Moldova_%2848121769796%29.jpg/1920px-Moldova_Competitiveness_Project%2C_USAID_Moldova_%2848121769796%29.jpg?utm_source=ro.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
           alt="Mănăstirea rupestră săpată în stâncă de la Orheiul Vechi, Republica Moldova">
 
         <p>Republica Moldova este o țară din Europa de Est, cunoscută pentru peisajele
@@ -217,16 +189,16 @@
         </p>
       </article>
 
-      <a class="inapoi-sus" href="#top">&#8593; Înapoi sus</a>
+      <a class="inapoi-sus" href="#top"> Înapoi sus</a>
     </section>
 
     <section id="norvegia">
       <article>
-        <h2>Partea 2 – Norvegia</h2>
+        <h2>Norvegia</h2>
 
         <img
           class="imagine-tara"
-          src="https://commons.wikimedia.org/wiki/Special:FilePath/Geiranger%20Fjord%20from%20Mount%20Dalsnibba%20(48651236563).jpg?width=500"
+          src="https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Fredvang_Lofoten_2009_2.JPG/1920px-Fredvang_Lofoten_2009_2.JPG?utm_source=ro.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
           alt="Fiordul Geiranger, văzut de pe muntele Dalsnibba, Norvegia">
 
         <p>Norvegia este o țară nordică renumită pentru fiorduri, munți și peisaje
@@ -296,12 +268,12 @@
         </p>
       </article>
 
-      <a class="inapoi-sus" href="#top">&#8593; Înapoi sus</a>
+      <a class="inapoi-sus" href="#top"> Înapoi sus</a>
     </section>
 
     <section id="suedia">
       <article>
-        <h2>Partea 3 – Suedia</h2>
+        <h2>Suedia</h2>
 
         <img
           class="imagine-tara"
@@ -356,49 +328,13 @@
         </p>
       </article>
 
-      <a class="inapoi-sus" href="#top">&#8593; Înapoi sus</a>
-    </section>
-
-    <section id="tabel-comparativ">
-      <h2>Tabel comparativ</h2>
-      <table>
-        <tr>
-          <th>Țară</th>
-          <th>Capitală</th>
-          <th>Populație (aprox.)</th>
-          <th>Suprafață (km²)</th>
-          <th>Monedă</th>
-        </tr>
-        <tr>
-          <td>Republica Moldova</td>
-          <td>Chișinău</td>
-          <td>2,5 milioane</td>
-          <td>33 843</td>
-          <td>Leu moldovenesc (MDL)</td>
-        </tr>
-        <tr>
-          <td>Norvegia</td>
-          <td>Oslo</td>
-          <td>5,5 milioane</td>
-          <td>385 207</td>
-          <td>Coroana norvegiană (NOK)</td>
-        </tr>
-        <tr>
-          <td>Suedia</td>
-          <td>Stockholm</td>
-          <td>10,5 milioane</td>
-          <td>450 295</td>
-          <td>Coroana suedeză (SEK)</td>
-        </tr>
-      </table>
-
-      <a class="inapoi-sus" href="#top">&#8593; Înapoi sus</a>
+      <a class="inapoi-sus" href="#top"> Înapoi sus</a>
     </section>
 
   </main>
 
   <footer>
-    Lucrare practică – Recapitulare HTML | Realizat de Gigel
+   Creator: Micu Nicolae
   </footer>
 
 </body>
