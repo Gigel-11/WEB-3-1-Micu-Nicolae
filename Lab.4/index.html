@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head><meta charset="UTF-8"><title>Laborator 4</title></head>
+<body>
+<h1>Laborator 4 – Liste și metodele Array</h1>
+<p>Ex. 1 și 2: vezi consola (F12).</p>
+
+<hr>
+<h2>Ex. 3 și 4 – Lista de cumpărături</h2>
+<input type="text" id="produs" placeholder="Produs">
+<button onclick="adaugaSfarsit()">Adaugă la sfârșit</button>
+<button onclick="adaugaInceput()">Adaugă la început</button>
+<button onclick="stergePrimul()">Șterge primul</button>
+<button onclick="stergeUltimul()">Șterge ultimul</button>
+<p id="lista"></p>
+
+<hr>
+<h2>Ex. 5 – CATALOG ELECTRONIC</h2>
+<p id="numar"></p>
+<div id="catalog"></div>
+
+<h3>Adaugă elev</h3>
+Nume: <input type="text" id="nume"><br>
+Vârsta: <input type="number" id="varsta"><br>
+Nota: <input type="number" id="nota"><br>
+<button onclick="adaugaElev()">Adaugă elev</button>
+
+<h3>Șterge elev</h3>
+Numele elevului: <input type="text" id="numeSterge">
+<button onclick="stergeElev()">Șterge elev</button>
+
+<h3>Caută elev</h3>
+Caută elev: <input type="text" id="numeCauta">
+<button onclick="cautaElev()">Caută</button>
+<p id="rezultat"></p>
+
+<script>
+
+let fructe = ["Măr", "Pară", "Banana", "Portocală", "Kiwi"];
+console.log(fructe);
+console.log(fructe[0]);
+console.log(fructe[fructe.length - 1]);
+console.log(fructe.length);
+
+let orase = ["Chișinău", "Bălți", "Cahul"];
+orase.push("Orhei");
+orase.unshift("Soroca");
+orase.pop();
+orase.shift();
+console.log(orase);
+
+let produse = ["Pâine", "Lapte", "Ouă"];
+
+function afiseaza() {
+  let zona = document.getElementById("lista");
+  if (produse.length === 0) {
+    zona.textContent = "Lista este goală!";
+  } else {
+    zona.textContent = produse.join(" | ");
+  }
+}
+
+function adaugaSfarsit() {
+  let inp = document.getElementById("produs");
+  if (inp.value.trim() === "") return;
+  produse.push(inp.value.trim());
+  inp.value = "";
+  afiseaza();
+}
+
+function adaugaInceput() {
+  let inp = document.getElementById("produs");
+  if (inp.value.trim() === "") return;
+  produse.unshift(inp.value.trim());
+  inp.value = "";
+  afiseaza();
+}
+
+function stergePrimul() {
+  produse.shift();
+  afiseaza();
+}
+
+function stergeUltimul() {
+  produse.pop();
+  afiseaza();
+}
+
+afiseaza();
+
+let elevi = [
+  { nume: "Popescu Ana", varsta: 17, nota: 9 },
+  { nume: "Rusu Mihai", varsta: 18, nota: 8 },
+  { nume: "Ciobanu Maria", varsta: 17, nota: 10 }
+];
+
+function afiseazaElevi() {
+  let html = "";
+  elevi.forEach(function (e, i) {
+    html += (i + 1) + ". " + e.nume + "<br>" +
+            "Vârsta: " + e.varsta + "<br>" +
+            "Nota: " + e.nota + "<br><br>";
+  });
+  document.getElementById("catalog").innerHTML = html;
+  document.getElementById("numar").textContent = "Număr de elevi: " + elevi.length;
+}
+
+function adaugaElev() {
+  let nume = document.getElementById("nume").value.trim();
+  let varsta = Number(document.getElementById("varsta").value);
+  let nota = Number(document.getElementById("nota").value);
+  if (nume === "") return;
+
+  let elevNou = { nume: nume, varsta: varsta, nota: nota };
+  elevi.push(elevNou);
+
+  document.getElementById("nume").value = "";
+  document.getElementById("varsta").value = "";
+  document.getElementById("nota").value = "";
+  afiseazaElevi();
+}
+
+function stergeElev() {
+  let nume = document.getElementById("numeSterge").value.trim().toLowerCase();
+  let elev = elevi.find(e => e.nume.toLowerCase() === nume);
+  if (elev) {
+    elevi.splice(elevi.indexOf(elev), 1);
+  }
+  document.getElementById("numeSterge").value = "";
+  afiseazaElevi();
+}
+
+function cautaElev() {
+  let nume = document.getElementById("numeCauta").value.trim().toLowerCase();
+  let elev = elevi.find(e => e.nume.toLowerCase() === nume);
+  let r = document.getElementById("rezultat");
+  if (elev) {
+    r.innerHTML = "Elev găsit!<br>Nume: " + elev.nume +
+                  "<br>Vârsta: " + elev.varsta +
+                  "<br>Nota: " + elev.nota;
+  } else {
+    r.textContent = "Elevul nu a fost găsit!";
+  }
+}
+
+afiseazaElevi();
+</script>
+</body>
+</html>

@@ -27,14 +27,11 @@ const gameScore = {
   }
 };
 
-let roundsPlayed = 0;
-
 const btnPiatra = document.getElementById("btnPiatra");
 const btnHartia = document.getElementById("btnHartia");
 const btnFoarfeca = document.getElementById("btnFoarfeca");
 const resetBtn = document.getElementById("resetBtn");
 const resultEl = document.getElementById("result");
-const roundsInfoEl = document.getElementById("roundsInfo");
 const playerScoreEl = document.getElementById("playerScore");
 const computerScoreEl = document.getElementById("computerScore");
 const drawScoreEl = document.getElementById("drawScore");
@@ -96,9 +93,6 @@ function playRound(playerChoice) {
     resultEl.textContent = "Calculatorul a castigat runda.";
   }
 
-  roundsPlayed++;
-  roundsInfoEl.textContent = `Runde jucate: ${roundsPlayed}`;
-
   updateScoreDisplay();
   gameScore.displayScore();
   checkFinalWinner();
@@ -120,9 +114,7 @@ function handleResetClick() {
   gameScore.player = 0;
   gameScore.computer = 0;
   gameScore.draws = 0;
-  roundsPlayed = 0;
   updateScoreDisplay();
-  roundsInfoEl.textContent = "Runde jucate: 0";
   resultEl.textContent = "Alege o varianta.";
   setButtonsDisabled(false);
 }
